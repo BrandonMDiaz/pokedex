@@ -1,0 +1,13 @@
+.main-list{
+  box-shadow: 1px;
+}
+
+.pokemon {
+  cursor: pointer;
+  display: flex;
+  padding-left: 20px;
+  align-items: center;
+  border: rgba(34, 33, 33, 0.671) solid 1px;
+  width: 300px;
+  height: 90px;
+}
