@@ -15,7 +15,9 @@ export class PokemonComponent implements OnInit {
     this.pokemones = pokemonData;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('pokemon component: OnInit')
+  }
   displayInfo(pokemonId: number) {
     this.pokemonSelected = pokemonId === this.pokemonSelected ? -1 : pokemonId;
   }

@@ -11,6 +11,7 @@ export class PokemonDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log('pokemon-detail component: OnInit')
     this.type = this.pokemonDetails.types[0]
   }
 

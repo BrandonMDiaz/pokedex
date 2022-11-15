@@ -14,14 +14,16 @@ export class BackgroundDirective implements OnInit{
     ice: '#98d8d8',
     fighting: '#c03028',
     poison: '#a040a0',
-    ground: '#e0c068'
+    ground: '#e0c068',
+    bug: '#a8b820'
   }
 
   constructor(private el: ElementRef) {
   }
 
   ngOnInit(): void {
-    this.el.nativeElement.style.backgroundColor = this.backgroundColors[this.appBackground];
+    console.log('background directive: OnInit')
+    this.el.nativeElement.style.backgroundColor = this.backgroundColors[this.appBackground.toLowerCase()];
   }
 
 }
