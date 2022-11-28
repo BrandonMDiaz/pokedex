@@ -1,0 +1,11 @@
+.pagination {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.number{
+  border: 1px solid black;
+  padding: 3px;
+}

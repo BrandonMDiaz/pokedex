@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Pokemon } from 'src/app/models/pokemon';
+import { PokemonService } from 'src/app/services/pokemon.service';
 import pokemonData from './pokemon.json';
 
 @Component({
@@ -9,15 +11,18 @@ import pokemonData from './pokemon.json';
 export class PokemonComponent implements OnInit {
   title = 'pokedex';
   pokemonSelected: number = -1;
-  pokemones: any;
+  pokemones: Pokemon[] = [];
 
-  constructor() {
-    this.pokemones = pokemonData;
+  constructor(private pokemonService: PokemonService) {
+    // this.pokemonService.getPokemons2(1);
+    this.pokemonService.setPokemons(1);
   }
 
   ngOnInit(): void {
-    console.log('pokemon component: OnInit')
+    console.log('pokemon component: OnInit');
+    this.pokemones = this.pokemonService.pokemons;
   }
+
   displayInfo(pokemonId: number) {
     this.pokemonSelected = pokemonId === this.pokemonSelected ? -1 : pokemonId;
   }

@@ -1,0 +1,20 @@
+
+.list-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.pokemon {
+  background-color: white;
+  border-radius: 5px;
+  border-radius: 5px 5px 0px 0px;
+  cursor: pointer;
+  display: flex;
+  padding-left: 20px;
+  align-items: center;
+  width: 300px;
+  height: 120px;
+  margin-right: auto;
+}
