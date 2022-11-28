@@ -1,0 +1,10 @@
+  <div class="list-container">
+    <div *ngFor="let pokemon of pokemones">
+      <div (click)="displayInfo(pokemon.id)" class="pokemon" [pokemonBackground]="pokemon.types[0].type.name">
+        <img src="{{pokemon.sprites.front_default}}">
+        <h3>{{pokemon.name}}</h3>
+      </div>
+      <app-pokemon-details *ngIf="pokemon.id === pokemonSelected" [pokemonDetails]="pokemon"></app-pokemon-details>
+    </div>
+  </div>
+

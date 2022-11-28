@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Pokemon } from 'src/app/models/pokemon';
 
 @Component({
   selector: 'app-pokemon-details',
@@ -6,13 +7,23 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./pokemon-details.component.scss']
 })
 export class PokemonDetailsComponent implements OnInit {
-  @Input() pokemonDetails: any;
+  @Input() pokemonDetails!: Pokemon;
   type: string = '';
   constructor() { }
 
+  getTypes(types: any[]) {
+    const typeString = types.reduce((acc, el) => {
+      if (acc === '') {
+        return el.type.name;
+      }
+      return acc + ', ' + el.type.name;
+    }, '');
+    return typeString;
+  }
+
   ngOnInit(): void {
     console.log('pokemon-detail component: OnInit')
-    this.type = this.pokemonDetails.types[0]
+    this.type = this.pokemonDetails.types[0].type.name;
   }
 
 }

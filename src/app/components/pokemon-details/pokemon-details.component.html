@@ -1,0 +1,6 @@
+<div [pokemonBackground]="type" class="pokemon-info">
+  <h4>Name: {{pokemonDetails.name}}</h4>
+  <h4>Type: {{pokemonDetails.types[0].type.name}}</h4>
+  <h4>Weight: {{pokemonDetails.weight | pokemonWeight}}</h4>
+  <h4>Height: {{pokemonDetails.height | pokemonHeight}}</h4>
+</div>

@@ -1,10 +1,10 @@
 import { Directive, Input, ElementRef, OnInit } from '@angular/core';
 
 @Directive({
-  selector: '[appBackground]'
+  selector: '[pokemonBackground]'
 })
 export class BackgroundDirective implements OnInit{
-  @Input() appBackground: string = '';
+  @Input() pokemonBackground: string = '';
   backgroundColors: any = {
     normal: '#a8a878',
     fire: '#f08030',
@@ -23,7 +23,7 @@ export class BackgroundDirective implements OnInit{
 
   ngOnInit(): void {
     console.log('background directive: OnInit')
-    this.el.nativeElement.style.backgroundColor = this.backgroundColors[this.appBackground.toLowerCase()];
+    this.el.nativeElement.style.backgroundColor = this.backgroundColors[this.pokemonBackground.toLowerCase()];
   }
 
 }
