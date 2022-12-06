@@ -1,0 +1,27 @@
+<div class="auth-container">
+  <img class="img" src="../../../assets/Pokemon_logo.png">
+  <form class="form" #userForm="ngForm" (ngSubmit)="register(userForm)">
+    <h3 class="title">Register</h3>
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="user.name" #ctrl="ngModel" required name="name">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Last Name</mat-label>
+      <input matInput [(ngModel)]="user.lastName" #ctrl="ngModel" required name="lastName">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" [(ngModel)]="user.email" #ctrl="ngModel" required name="email"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" email>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" [(ngModel)]="user.password" #ctrl="ngModel" required name="password">
+    </mat-form-field>
+    <div class="form-link">
+      <a href="/login" class="link">login...</a>
+    </div>
+    <button type="submit" class="button">Register</button>
+  </form>
+</div>

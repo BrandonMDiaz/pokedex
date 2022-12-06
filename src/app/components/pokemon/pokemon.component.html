@@ -1,10 +1,11 @@
-  <div class="list-container">
-    <div *ngFor="let pokemon of pokemones">
-      <div (click)="displayInfo(pokemon.id)" class="pokemon" [pokemonBackground]="pokemon.types[0].type.name">
-        <img src="{{pokemon.sprites.front_default}}">
-        <h3>{{pokemon.name}}</h3>
+<div class="list-container">
+  <div *ngFor="let pokemon of pokemones">
+    <div (click)="displayInfo(pokemon.id)" class="pokemon">
+      <div class="btn-container" *ngIf="isAdmin">
+        <button>Edit</button>
+        <button>Delete</button>
       </div>
-      <app-pokemon-details *ngIf="pokemon.id === pokemonSelected" [pokemonDetails]="pokemon"></app-pokemon-details>
+      <h3 class="pokemon-name">{{pokemon.name}}</h3>
     </div>
   </div>
-
+</div>

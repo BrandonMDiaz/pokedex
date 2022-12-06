@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Pokemon } from 'src/app/models/pokemon';
+import { Pokemon, PokemonDetails } from 'src/app/models/pokemon';
 
 @Component({
   selector: 'app-pokemon-details',
@@ -7,7 +7,7 @@ import { Pokemon } from 'src/app/models/pokemon';
   styleUrls: ['./pokemon-details.component.scss']
 })
 export class PokemonDetailsComponent implements OnInit {
-  @Input() pokemonDetails!: Pokemon;
+  @Input() pokemonDetails!: PokemonDetails;
   type: string = '';
   constructor() { }
 

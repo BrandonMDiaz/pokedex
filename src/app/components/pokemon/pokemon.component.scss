@@ -1,5 +1,4 @@
-
-.list-container{
+.list-container {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
@@ -7,14 +6,32 @@
 }
 
 .pokemon {
-  background-color: white;
+  background-image: url("../../../assets/pokeball.png");
+  background-size: cover;
+  flex-direction: column;
+  justify-content: center;
+  text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000,
+    -1px -1px #000, 1px -1px #000, -1px 1px #000;
+  color: rgb(253, 253, 253);
   border-radius: 5px;
   border-radius: 5px 5px 0px 0px;
   cursor: pointer;
   display: flex;
-  padding-left: 20px;
   align-items: center;
   width: 300px;
   height: 120px;
   margin-right: auto;
+}
+
+.btn-container {
+  align-self: end;
+  margin-right: 10%;
+}
+
+.btn-container button {
+  margin-left: 5px;
+}
+.pokemon-name {
+  align-self: flex-start;
+  margin-left: 10%;
 }
