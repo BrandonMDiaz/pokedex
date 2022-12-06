@@ -1,0 +1,62 @@
+<div class="page-container">
+  <form class="form" [formGroup]="pokemonForm" (ngSubmit)="onSubmit()">
+    <div>
+      <h3>Add pokemon</h3>
+    </div>
+    <div class="field">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" required />
+      </mat-form-field>
+    </div>
+
+    <div class="field">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Height</mat-label>
+        <input matInput formControlName="height" type="number" required />
+      </mat-form-field>
+    </div>
+
+    <div class="field">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Weight</mat-label>
+        <input matInput formControlName="weight" type="number" required />
+      </mat-form-field>
+    </div>
+
+    <div class="field">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Base experience</mat-label>
+        <input matInput formControlName="base_experience" type="number" required />
+      </mat-form-field>
+    </div>
+
+    <div class="field">
+      <mat-form-field appearance="fill">
+        <mat-label>Type</mat-label>
+        <mat-select required formControlName="type" (selectionChange)="validateSelect()">
+          <mat-option *ngFor='let type of pokemonTypes' [value]="type">{{type}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="field">
+      <mat-form-field appearance="fill">
+        <mat-label>Type</mat-label>
+
+        <mat-select required formControlName="type1" (selectionChange)="validateSelect()">
+          <mat-option value="none">None</mat-option>
+          <mat-option *ngFor='let type of pokemonTypes' [value]="type">{{type}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <span class="error-message" *ngIf="sameType">*Please choose a different type on both selects</span>
+    </div>
+
+    <button type=" submit" class="button" [disabled]="!pokemonForm.valid">
+      Create
+    </button>
+  </form>
+</div>

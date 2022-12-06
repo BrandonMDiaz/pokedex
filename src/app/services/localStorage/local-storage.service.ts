@@ -8,7 +8,7 @@ export class LocalStorageService {
   constructor() {}
 
   getToken() {
-    return localStorage.getItem(environment.jwtKey) ? true : false;
+    return localStorage.getItem(environment.jwtKey);
   }
 
   delete(key: string): void {

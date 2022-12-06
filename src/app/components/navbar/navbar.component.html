@@ -1,3 +1,11 @@
 <div class="navbar" *ngIf="isLoggedIn()">
+  <div class="menu-btn">
+    <div class="menu-item">
+      <a href="/pokemones">Pokemons</a>
+    </div>
+    <div class="menu-item" *ngIf="isAdmin">
+      <a href="/users">Users</a>
+    </div>
+  </div>
   <button class="button" (click)="logout()">Logout</button>
 </div>

@@ -1,4 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 body {
   margin: 0;
 }
@@ -6,23 +7,31 @@ body {
   padding: 4px;
   font-size: 16px;
   border-color: #939393;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   color: #000000;
   border-style: solid;
   border-radius: 6px;
 }
 
+.auth-container {
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
 
 /* CSS */
 .button {
-  background-color: #EA4C89;
+  background-color: #ea4c89;
   border-radius: 8px;
   border-style: none;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
   display: inline-block;
-  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
   font-size: 14px;
   font-weight: 500;
   height: 40px;
@@ -43,14 +52,13 @@ body {
 
 .button:hover,
 .button:focus {
-  background-color: #F082AC;
+  background-color: #f082ac;
 }
 
 .button:disabled {
   background-color: #8b4d65;
 
   cursor: not-allowed;
-
 }
 .input-error {
   border-color: red;
@@ -59,4 +67,60 @@ body {
 .error-message {
   font-size: 14px;
   color: red;
+}
+.link {
+}
+.form {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 380px;
+  border-radius: 6px;
+  box-shadow: 1px 3px 9px -3px rgba(0, 0, 0, 0.91);
+  padding-bottom: 10px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 60%;
+}
+
+.form-field input {
+  width: 100%;
+}
+
+.title {
+  align-self: start !important;
+  margin-left: 10% !important;
+  margin-bottom: 0 !important;
+}
+
+.form-link {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+}
+
+.form-link a {
+  font-size: 15px;
+  margin-left: 10%;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.page-container {
+  display: flex;
+  justify-content: center;
 }

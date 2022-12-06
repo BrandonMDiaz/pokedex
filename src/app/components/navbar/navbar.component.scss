@@ -1,11 +1,32 @@
 .navbar {
-  width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   margin-bottom: 5%;
+  padding: 0 0 0 2%;
 }
 
 .navbar button {
   margin-right: 7%;
   margin-top: 2%;
+}
+
+
+.menu-btn{
+  margin-left: 5%;
+  display: inline-flex;
+  align-items: end;
+  color: white;
+  border-bottom: 3px solid #d0de38;
+
+}
+
+.menu-item{
+  border-left: 3px solid #d0de38;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+a:link, a:visited  {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
 }

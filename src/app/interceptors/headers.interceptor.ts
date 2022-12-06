@@ -6,7 +6,7 @@ import {
   HttpInterceptor
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { LocalStorageService } from '../services/local-storage.service';
+import { LocalStorageService } from '../services/localStorage/local-storage.service';
 import { environment } from 'src/environments/environment.prod';
 
 @Injectable()

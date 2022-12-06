@@ -1,7 +1,20 @@
+import { Response } from './api';
+
 export interface User {
-  id: string;
+  _id?: string;
   name: string;
   lastName: string;
   role: string;
   email: string;
+  password?: string;
+}
+
+export interface ApiUserPostReponse {
+  message: string;
+  ok: boolean;
+  token: string;
+}
+
+export interface ApiUserResponse extends Response {
+  users: User[];
 }

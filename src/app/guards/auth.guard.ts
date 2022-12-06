@@ -8,7 +8,7 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
-import { LocalStorageService } from '../services/local-storage.service';
+import { LocalStorageService } from '../services/localStorage/local-storage.service';
 
 @Injectable({
   providedIn: 'root',
