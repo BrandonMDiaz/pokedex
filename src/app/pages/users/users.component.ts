@@ -5,6 +5,7 @@ import { ApiUserResponse, User } from '../../models/user';
 import { UsersService } from '../../services/users/users.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/components/dialog/dialog.component';
+import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -22,8 +23,11 @@ export class UsersComponent implements OnInit {
   constructor(
     private userService: UsersService,
     private router: Router,
-    public dialog: MatDialog
-  ) {}
+    public dialog: MatDialog,
+    private titleService: Title
+  ) {
+    this.titleService.setTitle('Users');
+  }
 
   async ngOnInit(): Promise<void> {
     this.users = await this.userService.getUsers(1);

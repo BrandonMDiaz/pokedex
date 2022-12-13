@@ -11,8 +11,12 @@ import { RolesGuard } from './guards/roles.guard';
 import { EditUserComponent } from './pages/edit-user/edit-user.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent, data: { title: 'Login' } },
+  {
+    path: 'register',
+    component: RegisterComponent,
+    data: { title: 'Register' },
+  },
   {
     path: 'pokemones',
     canActivate: [AuthGuard],
@@ -20,10 +24,12 @@ const routes: Routes = [
       {
         path: '',
         component: PokemonPageComponent,
+        data: { title: 'Pokemon' },
       },
       {
         path: 'add',
         component: AddPokemonComponent,
+        data: { title: 'Add' },
       },
     ],
   },
@@ -34,14 +40,17 @@ const routes: Routes = [
       {
         path: '',
         component: UsersComponent,
+        data: { title: 'Users' },
       },
       {
         path: 'add',
         component: AddUserComponent,
+        data: { title: 'add' },
       },
       {
         path: 'edit/:id',
         component: EditUserComponent,
+        data: { title: 'edit' },
       },
     ],
   },

@@ -2,8 +2,8 @@
   <div *ngFor="let pokemon of pokemones">
     <div (click)="displayInfo(pokemon.id)" class="pokemon">
       <div class="btn-container" *ngIf="isAdmin">
-        <button>Edit</button>
-        <button>Delete</button>
+        <button (click)="openDeleteDialog(pokemon.id)">Edit</button>
+        <button (click)="openDeleteDialog(pokemon.id)">Delete</button>
       </div>
       <h3 class="pokemon-name">{{pokemon.name}}</h3>
     </div>

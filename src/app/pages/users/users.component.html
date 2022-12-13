@@ -2,7 +2,7 @@
   <div class="agregar-container">
     <h1>Users</h1>
     <div>
-      <button mat-raised-button color="basic" (click)="redirect()">Add</button>
+      <button id="agregar" mat-raised-button color="basic" (click)="redirect()">Add</button>
 
     </div>
   </div>
@@ -33,8 +33,9 @@
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef> </th>
         <td mat-cell *matCellDef="let element">
-          <button mat-raised-button color="basic" (click)="edit(element._id)">Edit</button>
-          <button mat-raised-button color="warn" (click)="openDeleteDialog(element._id)">Delete</button>
+          <button [id]="'Editar'" mat-raised-button color="basic" (click)="edit(element._id)">Edit</button>
+          <button [id]="'Eliminar'" mat-raised-button color="warn"
+            (click)="openDeleteDialog(element._id)">Delete</button>
         </td>
       </ng-container>
       <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>

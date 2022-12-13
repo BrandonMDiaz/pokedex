@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/models/user';
@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './edit-user.component.html',
   styleUrls: ['./edit-user.component.scss'],
 })
-export class EditUserComponent implements OnInit {
+export class EditUserComponent implements OnInit, OnDestroy {
   private routeSub: Subscription | undefined;
   user: User | undefined;
   formChanged = false;
@@ -19,6 +19,7 @@ export class EditUserComponent implements OnInit {
     email: new FormControl('', [Validators.required, Validators.email]),
     role: new FormControl('', [Validators.required]),
   });
+
   constructor(
     private route: ActivatedRoute,
     private usersService: UsersService,
@@ -26,7 +27,7 @@ export class EditUserComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.routeSub = this.routeSub = this.route.params.subscribe((params) => {
+    this.routeSub = this.route.params.subscribe((params) => {
       this.user = this.usersService.users.find((el) => el._id === params['id']);
       if (this.user !== undefined) {
         const { name, lastName, email, role } = this.user!;
@@ -38,10 +39,15 @@ export class EditUserComponent implements OnInit {
         });
       }
     });
+    this.routeSub.unsubscribe();
   }
 
   ngOnDestroy() {
-    this.routeSub?.unsubscribe();
+    if (this.routeSub) {
+      console.log('uns');
+
+      this.routeSub.unsubscribe();
+    }
   }
 
   async register() {

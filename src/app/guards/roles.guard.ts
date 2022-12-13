@@ -13,11 +13,8 @@ import { AuthService } from '../services/auth/auth.service';
   providedIn: 'root',
 })
 export class RolesGuard implements CanActivate {
-  constructor(private auth: AuthService, private router: Router) {}
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ):
+  constructor(private auth: AuthService) {}
+  canActivate():
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree>
     | boolean

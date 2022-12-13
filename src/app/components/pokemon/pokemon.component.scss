@@ -6,7 +6,7 @@
 }
 
 .pokemon {
-  background-image: url("../../../assets/pokeball.png");
+  background-image: url("../../../assets/poke.jpg");
   background-size: cover;
   flex-direction: column;
   justify-content: center;
@@ -33,5 +33,5 @@
 }
 .pokemon-name {
   align-self: flex-start;
-  margin-left: 10%;
+  margin-left: 5%;
 }

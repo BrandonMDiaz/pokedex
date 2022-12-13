@@ -56,6 +56,7 @@ export class AddPokemonComponent implements OnInit {
   constructor(private pokemonService: PokemonService, private router: Router) {}
 
   ngOnInit(): void {}
+
   async onSubmit() {
     if (this.pokemonForm.valid && this.validateSelect()) {
       const { name, weight, height, base_experience, type, type1 } =
@@ -79,6 +80,7 @@ export class AddPokemonComponent implements OnInit {
       }
     }
   }
+
   validateSelect(): boolean {
     if (this.pokemonForm.value.type === this.pokemonForm.value.type1) {
       this.sameType = true;
