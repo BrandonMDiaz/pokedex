@@ -5,4 +5,8 @@ describe('PokemonWeightPipe', () => {
     const pipe = new PokemonWeightPipe();
     expect(pipe).toBeTruthy();
   });
+  it('add Kg to the string', () => {
+    const pipe = new PokemonWeightPipe();
+    expect(pipe.transform('123')).toBe('123 Kg');
+  });
 });

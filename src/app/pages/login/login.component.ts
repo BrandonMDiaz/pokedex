@@ -13,16 +13,12 @@ import {
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  public loginForm: FormGroup;
-  constructor(private authService: AuthService) {
-    this.loginForm = new FormGroup({
-      email: new FormControl('', [
-        Validators.required,
-        Validators.email,
-      ]),
-      password: new FormControl('', [Validators.required]),
-    });
-  }
+  public loginForm: FormGroup = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required]),
+  });
+
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}
 
@@ -35,8 +31,10 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    const email = this.email?.value;
-    const password = this.password?.value;
-    this.authService.login(email, password);
+    if (this.loginForm.valid) {
+      const email = this.email?.value;
+      const password = this.password?.value;
+      this.authService.login(email, password);
+    }
   }
 }

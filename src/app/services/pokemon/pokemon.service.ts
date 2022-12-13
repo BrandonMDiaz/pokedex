@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, firstValueFrom, throwError } from 'rxjs';
+import { catchError, firstValueFrom, Observable, map, pipe } from 'rxjs';
 import { Error, ErrorResponse } from 'src/app/models/errors';
 import { environment } from 'src/environments/environment.prod';
 import {
@@ -23,19 +23,22 @@ export class PokemonService {
     private localStorage: LocalStorageService
   ) {}
 
-  async getPokemons(page: number): Promise<Pokemon[]> {
+  getPokemons(page: number): Observable<Pokemon[]> {
     try {
       const params = new HttpParams({
         fromObject: { page, limit: this.limitPerPage },
       });
-      const response = (await firstValueFrom(
-        this.http.get(this.url, { params })
-      )) as ApiPokemonResponse;
-      this.pokemons = response.pokemons;
-      return this.pokemons;
+      return this.http
+        .get<ApiPokemonResponse>(this.url, { params })
+        .pipe(map((res) => res.pokemons));
+      // const response = (await firstValueFrom(
+      //   this.http.get(this.url, { params })
+      // )) as ApiPokemonResponse;
+      // this.pokemons = response.pokemons;
+      // return this.pokemons;
     } catch (err) {
       this.error.handleError(err as ErrorResponse);
-      return [];
+      throw new Error('something went wrong');
     }
   }
 
@@ -51,11 +54,11 @@ export class PokemonService {
       return undefined;
     }
   }
-  async delete(id: string): Promise<Response | undefined> {
+  async delete(id: number): Promise<Response | undefined> {
     try {
-      const deleteUrl = `${this.url}/delete/${id}`;
+      const deleteUrl = `${this.url}/${id}`;
       const response = (await firstValueFrom(
-        this.http.delete(this.url)
+        this.http.delete(deleteUrl)
       )) as Response;
       return response;
     } catch (err) {

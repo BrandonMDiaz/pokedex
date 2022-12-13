@@ -1,4 +1,4 @@
-<div>
-  <button (click)="agregar()">Agregar</button>
+<div class="agregar-btn" *ngIf="isAdmin">
+  <button id="agregar" mat-raised-button color="basic" (click)="agregar()">Agregar</button>
 </div>
 <app-pokemon></app-pokemon>

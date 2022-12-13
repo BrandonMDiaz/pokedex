@@ -33,6 +33,7 @@ import { AddUserComponent } from './pages/add-user/add-user.component';
 import { FormsModule } from '@angular/forms';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { EditUserComponent } from './pages/edit-user/edit-user.component';
+import { PokemonFormComponent } from './components/pokemon-form/pokemon-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +53,7 @@ import { EditUserComponent } from './pages/edit-user/edit-user.component';
     AddUserComponent,
     DialogComponent,
     EditUserComponent,
+    PokemonFormComponent,
   ],
   imports: [
     BrowserModule,
