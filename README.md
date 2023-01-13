@@ -1,6 +1,6 @@
 # Pokedex
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+This proyect connects to a local backend, so you wont be able to use the app withouth that backend.
 
 ## Development server
 
